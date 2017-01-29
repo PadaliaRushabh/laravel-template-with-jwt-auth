@@ -16,7 +16,10 @@ use Illuminate\Http\Request;
 
 
 Route::group(['middleware' => ['jwt.refresh','jwt.auth']], function () {
-    //Add routes here 
+    //Add routes here
 });
 
 Route::post('/auth/login', 'Auth\AuthController@postLogin');
+
+
+Route::post('/test/connection', 'BaseController@testConnection');

@@ -18,12 +18,11 @@ class BaseController extends Controller
     public function __construct()
     {
         #$this->middleware('auth');
-        $user = JWTAuth::parseToken()->authenticate();
+        #$user = JWTAuth::parseToken()->authenticate();
     }
 
     public function success($data, $code = 200){
 
-        $data = json_decode($data, True);
         $return = array("data" => $data, "success" => true, "code" => $code);
         return json_encode($return);
     }
@@ -32,6 +31,13 @@ class BaseController extends Controller
 
         $return = array("message" => $message, "success" => false ,"code" => $code);
         return json_encode($return);
+    }
+
+    public function testConnection(Request $request){
+
+        $input = $request->all();
+        $input["message"] = "Connection tested successfully";
+        return $this->success($input);
     }
 
 }
