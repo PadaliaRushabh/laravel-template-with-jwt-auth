@@ -13,7 +13,7 @@ class SensorController extends BaseController
 
     public function __construct()
     {
-        parent::__construct();
+        $this->authenticateUser();
     }
 
 }
