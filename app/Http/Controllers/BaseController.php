@@ -6,6 +6,7 @@ use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Illuminate\Http\Response as IlluminateResponse;
 
+
 class BaseController extends Controller
 {
     /**
@@ -14,6 +15,11 @@ class BaseController extends Controller
      * @return void
      */
 
+    const CODE = array(
+        IlluminateResponse::HTTP_BAD_REQUEST => "Something went wrong",
+        100 => "Error message 1",
+        101 => "Error message 2"
+    );
 
     public function __construct()
     {
@@ -27,16 +33,16 @@ class BaseController extends Controller
         return json_encode($return);
     }
 
-    public function fail($message, $code = IlluminateResponse::HTTP_BAD_REQUEST){
+    public function fail($code = IlluminateResponse::HTTP_BAD_REQUEST){
 
-        $return = array("message" => $message, "success" => false ,"code" => $code);
+        $return = array("message" => self::CODE[$code], "success" => false ,"code" => $code);
         return json_encode($return);
     }
 
     public function testConnection(Request $request){
 
         $input = $request->all();
-        $input["message"] = "Connection tested successfully";
+        $input["message"] = "Connection passed successfully";
         return $this->success($input);
     }
 
