@@ -10,7 +10,7 @@
     <body>
         @yield('content')
 
-        <script src="{{ URL::asset('js/main.js') }}"> </script>
+        <script src="{{ URL::asset('js/dep.js') }}"> </script>
         <script src="{{ URL::asset('js/app.js') }}"></script>
     </body>
 </html>
