@@ -13,7 +13,11 @@ require('laravel-elixir-vue-2');
  |
  */
 
+
 elixir((mix) => {
-    mix.sass('app.scss')
-       .webpack('app.js');
+    mix.sass('app.scss', 'resources/assets/css/app.min.css')
+        .webpack('app.js')
+        .browserify('main.js')
+        .copy('node_modules/jquery-ui-dist/jquery-ui.min.css', 'resources/assets/css/jquery-ui.min.css')
+        .styles(['jquery-ui.min.css', 'app.min.css'], "public/css/app.css")
 });

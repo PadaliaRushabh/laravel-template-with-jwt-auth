@@ -163,6 +163,15 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+       
+        Nwidart\Modules\LaravelModulesServiceProvider::class,
+        PrettyRoutes\ServiceProvider::class,
+        Laracademy\Generators\GeneratorsServiceProvider::class,
+        Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
+        Spatie\Fractal\FractalServiceProvider::class,
+
 
         /*
          * Package Service Providers...
@@ -227,8 +236,12 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
-        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+        'Module' => Nwidart\Modules\Facades\Module::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Fractal' => Spatie\Fractal\FractalFacade::class,
 
     ],
 
