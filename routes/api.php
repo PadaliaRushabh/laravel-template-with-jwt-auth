@@ -21,5 +21,3 @@ Route::group(['middleware' => ['jwt.refresh','jwt.auth']], function () {
 
 Route::post('/auth/login', 'Auth\AuthController@postLogin');
 
-
-Route::post('/test/connection', 'BaseController@testConnection');
