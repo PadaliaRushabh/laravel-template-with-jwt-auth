@@ -15,9 +15,9 @@ require('laravel-elixir-vue-2');
 
 
 elixir((mix) => {
-    mix.sass('app.scss', 'resources/assets/css/app.min.css')
+    mix.sass('app.scss', 'resources/assets/css/app.css')
         .webpack('app.js')
         .copy('node_modules/jquery-ui-dist/jquery-ui.min.css', 'resources/assets/css/jquery-ui.min.css')
         .copy('node_modules/jquery-confirm/dist/jquery-confirm.min.css', 'resources/assets/css/jquery-confirm.min.css')
-        .styles(['jquery-ui.min.css','jquery-confirm.min.css','app.min.css'], "public/css/app.css")
+        .styles(['jquery-ui.min.css','jquery-confirm.min.css','app.css'], "public/css/app.min.css")
 });
